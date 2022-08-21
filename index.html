@@ -29,7 +29,7 @@
         <div>
           <!-- toggle menu and logo -->
           <div class="toggle-logo">
-            <button>
+            <button class="toggle-sidebar">
               <img src="./images/icon-menu.svg" alt="toggle menu image" />
             </button>
             <img src="./images/logo.svg" alt="logo" />
@@ -94,18 +94,22 @@
         <!-- price and discount  -->
         <div class="price-discount-container">
           <div>
-            <p>$125.00</p>
-            <p>50%</p>
+            <p class="current-price">$125.00</p>
+            <p class="discount-amount">50%</p>
           </div>
-          <p>$250.00</p>
+          <p class="old-price">$250.00</p>
         </div>
 
         <!-- quantity and add to cart button -->
         <div class="add-cart-container">
           <div class="quantity">
-            <button><img src="./images/icon-minus.svg" alt="" /></button>
+            <button id="minus-btn">
+              <img src="./images/icon-minus.svg" alt="" />
+            </button>
             <p>0</p>
-            <button><img src="./images/icon-plus.svg" alt="" /></button>
+            <button id="plus-btn">
+              <img src="./images/icon-plus.svg" alt="" />
+            </button>
           </div>
           <button class="add-to-cart-btn">
             <img src="./images/icon-cart.svg" alt="cart icon" />
@@ -114,6 +118,25 @@
         </div>
       </div>
     </main>
+
+    <!-- sidebar menu -->
+    <div class="sidebar-container">
+      <div class="sidebar">
+        <!-- close button -->
+        <button class="toggle-sidebar">
+          <img src="./images/icon-close.svg" alt="close menu button" />
+        </button>
+
+        <!-- sidebar links -->
+        <ul class="sidebar-links">
+          <li><a href="#" class="toggle-sidebar">Collections</a></li>
+          <li><a href="#" class="toggle-sidebar">Men</a></li>
+          <li><a href="#" class="toggle-sidebar">Women</a></li>
+          <li><a href="#" class="toggle-sidebar">About</a></li>
+          <li><a href="#" class="toggle-sidebar">Contact</a></li>
+        </ul>
+      </div>
+    </div>
     <script src="./app.js"></script>
   </body>
 </html>
