@@ -64,6 +64,7 @@ nav {
 }
 button {
   cursor: pointer;
+  position: relative;
 }
 /* 
 ========================
@@ -307,4 +308,53 @@ add to cart button
 }
 .show-sidebar .sidebar {
   transform: translateX(0);
+}
+/* 
+==========================
+==========================
+        cart 
+==========================
+==========================
+*/
+.cart {
+  width: 90%;
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: var(--White);
+  border-radius: 1rem;
+}
+.cart-title {
+  width: 100%;
+  border-bottom: 0.1rem solid var(--Grayish-blue);
+  padding: 1.5em 1.5em;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.cart-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 1.5em;
+}
+.cart-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+.cart-content > img {
+  width: 5em;
+}
+.checkout-btn {
+  width: 100%;
+  background: var(--Orange);
+  border: none;
+  color: var(--White);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1em 0em;
+  border-radius: 0.7em;
 }
