@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+  --Very-vark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --light-black: hsla(0, 0%, 0%, 0.5);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Kumbh Sans", sans-serif;
+}
+/* 
+========================
+========================
+        navigation 
+========================
+========================
+*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-center {
+  width: 90%;
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-center > div {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-links {
+  display: none;
+}
+.nav-center button {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+}
+.nav-center button:hover {
+  filter: brightness(65%);
+}
+.avatar-pic {
+  width: 1.5rem;
+}
+.toggle-logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+/* 
+========================
+========================
+        main 
+========================
+========================
+*/
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.galery-container {
+  position: relative;
+}
+.displayed-image {
+  display: none;
+}
+.galery {
+  width: 100%;
+  max-width: 100vw;
+  max-height: 25rem;
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+}
+.galery img {
+  width: 100%;
+  object-fit: cover;
+}
+.slide-buttons {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+}
+.slide-buttons button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--White);
+  display: grid;
+  place-items: center;
+}
+.slide-buttons button img {
+  width: 0.7rem;
+}

@@ -12,10 +12,100 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>E-commerce product page</title>
   </head>
   <body>
+    <!-- navigation -->
+    <nav>
+      <div class="nav-center">
+        <!-- nav links and logo and toggle -->
+        <div>
+          <!-- toggle menu and logo -->
+          <div class="toggle-logo">
+            <button>
+              <img src="./images/icon-menu.svg" alt="toggle menu image" />
+            </button>
+            <img src="./images/logo.svg" alt="logo" />
+          </div>
+          <!-- nav links -->
+          <ul class="nav-links">
+            <li><a href="">Collections</a></li>
+            <li><a href="">Men</a></li>
+            <li><a href="">Women</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- avatar and cart -->
+        <div>
+          <!-- cart buttons and profile image -->
+          <button><img src="./images/icon-cart.svg" alt="cart icon" /></button>
+          <img
+            class="avatar-pic"
+            src="./images/image-avatar.png"
+            alt="profile picture"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- main section -->
+    <main>
+      <!-- image side -->
+      <div class="galery-container">
+        <img
+          class="displayed-image"
+          src="./images/image-product-1.jpg"
+          alt=""
+        />
+        <div class="galery">
+          <img src="./images/image-product-1.jpg" alt="" />
+          <img src="./images/image-product-2.jpg" alt="" />
+          <img src="./images/image-product-3.jpg" alt="" />
+          <img src="./images/image-product-4.jpg" alt="" />
+        </div>
+        <!-- slide buttons -->
+        <div class="slide-buttons">
+          <button>
+            <img src="./images/icon-previous.svg" alt="previous icon" />
+          </button>
+          <button><img src="./images/icon-next.svg" alt="next icon" /></button>
+        </div>
+      </div>
+
+      <!-- text side -->
+      <div>
+        <h2>SNEAKER COMPANY</h2>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price-discount-container">
+          <div>
+            <p>$125.00</p>
+            <p>50%</p>
+          </div>
+          <p>$250.00</p>
+        </div>
+        <div class="add-cart-container">
+          <div>
+            <button><img src="./images/icon-minus.svg" alt="" /></button>
+            <p>0</p>
+            <button><img src="./images/icon-plus.svg" alt="" /></button>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="./app.js"></script>
   </body>
 </html>
