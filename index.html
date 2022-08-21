@@ -47,7 +47,9 @@
         <!-- avatar and cart -->
         <div>
           <!-- cart buttons and profile image -->
-          <button><img src="./images/icon-cart.svg" alt="cart icon" /></button>
+          <button class="cart-btn">
+            <img src="./images/icon-cart.svg" alt="cart icon" />
+          </button>
           <img
             class="avatar-pic"
             src="./images/image-avatar.png"
@@ -148,10 +150,16 @@
             alt="product 1 image"
           />
           <div>
-            <p>Autumn Limited Edition...</p>
-            <p>$125.00 x 3 <span>$375.00</span></p>
+            <p class="product-title">Autumn Limited Edition Sneakers</p>
+            <p>
+              $125.00 x
+              <span class="product-amount">3</span>
+              <span class="total-price"> $375.00</span>
+            </p>
           </div>
-          <button><img src="./images/icon-delete.svg" alt="" /></button>
+          <button class="delete-btn">
+            <img src="./images/icon-delete.svg" alt="" />
+          </button>
         </div>
         <button class="checkout-btn">Checkout</button>
       </div>
