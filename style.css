@@ -28,6 +28,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 .nav-center {
   width: 90%;
@@ -338,6 +339,7 @@ add to cart button
   font-size: 1rem;
 }
 .cart-content-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -386,12 +388,30 @@ add to cart button
 .delete-btn img {
   width: 1.1rem;
 }
-.total-price {
+.cart-total-price {
   font-weight: 700;
   color: var(--Black);
 }
 .show-cart {
-  z-index: 99;
+  z-index: 1;
   opacity: 1;
   transform: translate(-50%, 0%);
+}
+.cart-empty-text {
+  color: var(--Dark-grayish-blue);
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+}
+.hide-cart-content {
+  z-index: -1;
+  opacity: 0;
+}
+.show-cart-empty-text {
+  z-index: 1;
+  opacity: 1;
 }

@@ -108,7 +108,7 @@
             <button id="minus-btn">
               <img src="./images/icon-minus.svg" alt="" />
             </button>
-            <p>0</p>
+            <p id="product-amount">0</p>
             <button id="plus-btn">
               <img src="./images/icon-plus.svg" alt="" />
             </button>
@@ -144,24 +144,27 @@
     <div class="cart">
       <div class="cart-title"><p>Cart</p></div>
       <div class="cart-content-container">
-        <div class="cart-content">
-          <img
-            src="./images/image-product-1-thumbnail.jpg"
-            alt="product 1 image"
-          />
-          <div>
-            <p class="product-title">Autumn Limited Edition Sneakers</p>
-            <p>
-              $125.00 x
-              <span class="product-amount">3</span>
-              <span class="total-price"> $375.00</span>
-            </p>
+        <div class="cart-content-holder hide-cart-content">
+          <div class="cart-content">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="product 1 image"
+            />
+            <div>
+              <p class="product-title">Autumn Limited Edition Sneakers</p>
+              <p>
+                $125.00 x
+                <span class="cart-product-amount">0</span>
+                <span class="cart-total-price"> $0.00</span>
+              </p>
+            </div>
+            <button class="delete-btn">
+              <img src="./images/icon-delete.svg" alt="" />
+            </button>
           </div>
-          <button class="delete-btn">
-            <img src="./images/icon-delete.svg" alt="" />
-          </button>
+          <button class="checkout-btn">Checkout</button>
         </div>
-        <button class="checkout-btn">Checkout</button>
+        <p class="cart-empty-text show-cart-empty-text">Your cart is empty.</p>
       </div>
     </div>
 
