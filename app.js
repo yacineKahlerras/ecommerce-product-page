@@ -20,6 +20,7 @@ const plusBtn = document.getElementById("plus-btn");
 const addToCartBtn = document.querySelector(".add-to-cart-btn");
 const cartProductAmount = document.querySelector(".cart-product-amount");
 const cartTotalPrice = document.querySelector(".cart-total-price");
+const cartBtnAmount = document.querySelector(".cart-button-amount");
 
 /**
  ********************************
@@ -51,11 +52,13 @@ const addToCart = () => {
   cartProductAmount.textContent = amount;
   cartTotalPrice.textContent = `$${totalPrice}`;
   productAmountText.textContent = 0;
+  cartBtnAmount.textContent = amount;
 };
 
 /** shows the cart */
-const showCart = () => {
+const showCart = (show) => {
   cartElement.classList.toggle("show-cart");
+  if (show == false) cartElement.classList.remove("show-cart");
 };
 
 /** shows cart content */
@@ -68,6 +71,8 @@ const showCartContent = (show) => {
     cartEmptyText.classList.add("show-cart-empty-text");
     cartProductAmount.textContent = 0;
     cartTotalPrice.textContent = `$0`;
+    cartBtnAmount.textContent = 0;
+    showCart(false);
   }
 };
 
@@ -87,7 +92,7 @@ toggleSideMenuBtns.forEach((b) =>
 );
 
 // show cart
-cartBtn.addEventListener("click", showCart);
+cartBtn.addEventListener("click", () => showCart());
 
 // delete cart content
 deleteBtn.addEventListener("click", () => {

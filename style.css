@@ -50,9 +50,28 @@ nav {
   height: 1.5rem;
   background: transparent;
   border: none;
+  position: relative;
 }
-.nav-center button:hover {
+.nav-center button:hover img {
   filter: brightness(65%);
+}
+.nav-center button:hover .cart-button-amount {
+  filter: brightness(100%);
+}
+.cart-button-amount {
+  width: 1.5em;
+  height: 1.3em;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--White);
+  font-size: 0.75em;
+  font-weight: 700;
+  background: var(--Orange);
+  display: grid;
+  place-content: center;
+  transform: translate(25%, -50%);
 }
 .avatar-pic {
   width: 1.5rem;
