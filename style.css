@@ -73,6 +73,9 @@ nav {
   place-content: center;
   transform: translate(25%, -50%);
 }
+.hide-cart-btn-amount {
+  opacity: 0;
+}
 .avatar-pic {
   width: 1.5rem;
 }

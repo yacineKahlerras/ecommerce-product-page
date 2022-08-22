@@ -53,6 +53,7 @@ const addToCart = () => {
   cartTotalPrice.textContent = `$${totalPrice}`;
   productAmountText.textContent = 0;
   cartBtnAmount.textContent = amount;
+  cartBtnAmount.classList.remove("hide-cart-btn-amount");
 };
 
 /** shows the cart */
@@ -72,6 +73,7 @@ const showCartContent = (show) => {
     cartProductAmount.textContent = 0;
     cartTotalPrice.textContent = `$0`;
     cartBtnAmount.textContent = 0;
+    cartBtnAmount.classList.add("hide-cart-btn-amount");
     showCart(false);
   }
 };
