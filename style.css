@@ -79,6 +79,10 @@ nav {
 .avatar-pic {
   width: 1.5rem;
 }
+.avatar-pic:hover {
+  outline: 0.15rem solid var(--Orange);
+  border-radius: 50%;
+}
 .toggle-logo {
   display: flex;
   align-items: flex-start;
@@ -88,6 +92,54 @@ nav {
 button {
   cursor: pointer;
   position: relative;
+}
+button:active::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0rem;
+  bottom: 0rem;
+  background: rgba(255, 255, 255, 0.205);
+}
+@media (min-width: 62.5em) {
+  .nav-center {
+    border-bottom: 0.1rem solid var(--Grayish-blue);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+  .nav-links {
+    display: flex;
+    list-style: none;
+    font-size: 0.9rem;
+    gap: 1.5rem;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
+    position: relative;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    top: 3.2rem;
+    border-bottom: 3px solid var(--Orange);
+    left: 50%;
+    right: 50%;
+    transition: all 0.5s ease;
+  }
+  .nav-links a:hover {
+    color: var(--Black);
+  }
+  .nav-links a:hover:after {
+    left: 0;
+    right: 0;
+    transition: all 0.5s ease;
+  }
+  .toggle-sidebar {
+    display: none;
+  }
 }
 /* 
 ========================
@@ -129,7 +181,7 @@ image section
 .galery img {
   width: 100%;
   object-fit: cover;
-  transition: 0.5s;
+  transition: 0.9s ease-out;
 }
 .slide-buttons {
   width: 90%;
