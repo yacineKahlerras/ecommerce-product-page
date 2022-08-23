@@ -278,7 +278,7 @@ image section
   }
   .selected-garely-img:after {
     display: block;
-    background: rgba(255, 255, 255, 0.541);
+    background: rgba(255, 255, 255, 0.637);
     border: 0.15rem solid var(--Orange);
     border-radius: 0.5rem;
   }
@@ -317,7 +317,7 @@ modal
     text-align: right;
   }
   .modal-center {
-    width: min(100%, 21rem);
+    width: min(100%, 31.2rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -330,7 +330,7 @@ modal
     border-radius: 0.7em;
   }
   .modal-galery {
-    width: 100%;
+    width: 80%;
     padding-top: 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -378,8 +378,8 @@ modal
     justify-content: space-between;
   }
   .modal-slide-buttons button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     border: none;
     background: var(--White);
@@ -387,8 +387,12 @@ modal
     place-items: center;
   }
   .modal-slide-buttons button img {
-    width: 0.6rem;
-    height: 0.7rem;
+    width: 1rem;
+    height: 1rem;
+  }
+  .modal-slide-buttons button:hover img {
+    filter: invert(66%) sepia(71%) saturate(3841%) hue-rotate(347deg)
+      brightness(100%) contrast(101%);
   }
   #modal-next-btn {
     transform: translateX(50%);
@@ -408,6 +412,7 @@ modal
     border: none;
   }
   .close-modal img {
+    width: 1.4rem;
     filter: invert(66%) sepia(71%) saturate(3841%) hue-rotate(347deg)
       brightness(100%) contrast(101%);
   }
@@ -762,4 +767,9 @@ add to cart button
 .show-cart-empty-text {
   z-index: 1;
   opacity: 1;
+}
+@media (min-width: 62.5em) {
+  .product-title {
+    font-size: 1rem;
+  }
 }
