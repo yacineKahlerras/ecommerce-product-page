@@ -70,10 +70,18 @@
           alt=""
         />
         <div class="galery">
-          <img src="./images/image-product-1.jpg" alt="" />
-          <img src="./images/image-product-2.jpg" alt="" />
-          <img src="./images/image-product-3.jpg" alt="" />
-          <img src="./images/image-product-4.jpg" alt="" />
+          <div class="galery-img selected-garely-img">
+            <img src="./images/image-product-1.jpg" alt="" />
+          </div>
+          <div class="galery-img">
+            <img src="./images/image-product-2.jpg" alt="" />
+          </div>
+          <div class="galery-img">
+            <img src="./images/image-product-3.jpg" alt="" />
+          </div>
+          <div class="galery-img">
+            <img src="./images/image-product-4.jpg" alt="" />
+          </div>
         </div>
         <!-- slide buttons -->
         <div class="slide-buttons">
@@ -168,6 +176,34 @@
           <button class="checkout-btn">Checkout</button>
         </div>
         <p class="cart-empty-text show-cart-empty-text">Your cart is empty.</p>
+      </div>
+    </div>
+
+    <!-- image gallery modal -->
+    <div class="galery-container modal">
+      <img class="displayed-image" src="./images/image-product-1.jpg" alt="" />
+      <div class="galery">
+        <div class="galery-img selected-garely-img">
+          <img src="./images/image-product-1.jpg" alt="" />
+        </div>
+        <div class="galery-img">
+          <img src="./images/image-product-2.jpg" alt="" />
+        </div>
+        <div class="galery-img">
+          <img src="./images/image-product-3.jpg" alt="" />
+        </div>
+        <div class="galery-img">
+          <img src="./images/image-product-4.jpg" alt="" />
+        </div>
+      </div>
+      <!-- slide buttons -->
+      <div class="slide-buttons">
+        <button id="prev-btn" class="hide-slide-btn">
+          <img src="./images/icon-previous.svg" alt="previous icon" />
+        </button>
+        <button id="next-btn">
+          <img src="./images/icon-next.svg" alt="next icon" />
+        </button>
       </div>
     </div>
 
