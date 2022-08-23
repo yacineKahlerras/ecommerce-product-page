@@ -1,8 +1,35 @@
-/** vars */
+/**
+ ********************************
+ ********************************
 
-// sidebar
+
+ *        sidebar
+
+
+ * *******************************
+ * *****************************
+ * **/
 const sidebar = document.querySelector(".sidebar-container");
 const toggleSideMenuBtns = [...document.querySelectorAll(".toggle-sidebar")];
+
+// toggle menu
+toggleSideMenuBtns.forEach((b) =>
+  b.addEventListener("click", () => {
+    sidebar.classList.toggle("show-sidebar");
+  })
+);
+
+/**
+ ********************************
+ ********************************
+
+
+ *        cart
+ * 
+ * 
+ * *******************************
+ * *****************************
+ * **/
 
 // cart show
 const cartBtn = document.querySelector(".cart-btn");
@@ -21,14 +48,6 @@ const addToCartBtn = document.querySelector(".add-to-cart-btn");
 const cartProductAmount = document.querySelector(".cart-product-amount");
 const cartTotalPrice = document.querySelector(".cart-total-price");
 const cartBtnAmount = document.querySelector(".cart-button-amount");
-
-/**
- ********************************
- ********************************
- *        functions
- * *******************************
- * *****************************
- * **/
 
 /** increase/decrease product amount */
 const editProductAmount = (increase) => {
@@ -60,6 +79,25 @@ const addToCart = () => {
 const showCart = (show) => {
   cartElement.classList.toggle("show-cart");
   if (show == false) cartElement.classList.remove("show-cart");
+
+  const screenWidth =
+    window.innerWidth /
+    parseFloat(getComputedStyle(document.querySelector("body"))["font-size"]);
+  const rect = cartBtn.getBoundingClientRect();
+  if (screenWidth >= 62.5 && cartElement.classList.contains("show-cart")) {
+    cartElement.style.top = rect.bottom + "px";
+    cartElement.style.left = rect.left + "px";
+    cartElement.style.transform = "translate(-50%, 10%)";
+  } else if (
+    screenWidth >= 62.5 &&
+    !cartElement.classList.contains("show-cart")
+  ) {
+    cartElement.style.top = rect.bottom + "px";
+    cartElement.style.left = rect.left + "px";
+    cartElement.style.transform = "";
+  } else if (screenWidth < 62.5) {
+    cartElement.style = "";
+  }
 };
 
 /** shows cart content */
@@ -78,21 +116,6 @@ const showCartContent = (show) => {
   }
 };
 
-/**
- ********************************
- ********************************
- *        event listeners
- * *******************************
- * *****************************
- * **/
-
-// toggle menu
-toggleSideMenuBtns.forEach((b) =>
-  b.addEventListener("click", () => {
-    sidebar.classList.toggle("show-sidebar");
-  })
-);
-
 // show cart
 cartBtn.addEventListener("click", () => showCart());
 
@@ -110,7 +133,11 @@ addToCartBtn.addEventListener("click", addToCart);
 
 /**********************************
  **********************************
+
+
  *        image galery Slide
+ * 
+
  *********************************
  *********************************
  * */
@@ -187,7 +214,11 @@ document.addEventListener("touchmove", handleTouchMove, false);
 
 /**********************************
  **********************************
+
+
  *        image galery Modal
+
+
  *********************************
  *********************************
  * */
