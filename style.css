@@ -244,6 +244,7 @@ image section
   .galery img {
     border-radius: 0.5em;
     position: relative;
+    transform: translate(0%, 0%);
   }
   /* galery images */
   .galery-img {
@@ -285,14 +286,95 @@ modal
 
 */
 .modal {
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.733);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: grid;
-  place-items: center;
+  display: none;
+}
+@media (min-width: 62.5em) {
+  .modal-galery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.733);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+  }
+  .modal-center {
+    width: min(100%, 21rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-displayed-image {
+    display: block;
+    width: 100%;
+    border-radius: 0.7em;
+  }
+  .modal-galery {
+    width: 100%;
+    padding-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1.5em;
+    overflow: visible;
+  }
+  .modal-galery img {
+    width: 100%;
+    border-radius: 0.5em;
+    position: relative;
+  }
+  /* galery images */
+  .modal-galery-img {
+    position: relative;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .modal-galery-img:after {
+    position: absolute;
+    content: "";
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.329);
+  }
+  .modal-galery-img:hover:after {
+    display: block;
+  }
+  .modal-selected-garely-img:after {
+    display: block;
+    background: rgba(255, 255, 255, 0.541);
+    border: 0.15rem solid var(--Orange);
+    border-radius: 0.5rem;
+  }
+  .modal-slide-buttons {
+    display: none;
+  }
+  /* close button */
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+  .close-modal {
+    background: transparent;
+    border: none;
+  }
+  .close-modal img {
+    filter: invert(66%) sepia(71%) saturate(3841%) hue-rotate(347deg)
+      brightness(100%) contrast(101%);
+  }
 }
 /* 
 
