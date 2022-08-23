@@ -110,7 +110,7 @@ addToCartBtn.addEventListener("click", addToCart);
 
 /**********************************
  **********************************
- *          image galery
+ *        image galery Slide
  *********************************
  *********************************
  * */
@@ -184,3 +184,52 @@ function handleTouchMove(evt) {
 
 document.addEventListener("touchstart", handleTouchStart, false);
 document.addEventListener("touchmove", handleTouchMove, false);
+
+/**********************************
+ **********************************
+ *        image galery Modal
+ *********************************
+ *********************************
+ * */
+const modalDisplayedImage = document.querySelector(".modal-displayed-image");
+const closeModalBtn = document.querySelector(".close-modal");
+const modal = document.querySelector(".modal");
+const modalGaleryImgs = [...document.querySelectorAll(".modal-galery-img")];
+const galeryImgs = [...document.querySelectorAll(".galery-img")];
+const imgSources = [
+  "./images/image-product-1.jpg",
+  "./images/image-product-2.jpg",
+  "./images/image-product-3.jpg",
+  "./images/image-product-4.jpg",
+];
+
+/** display the clicked thumbnail image */
+const displayImg = (index, element) => {
+  modalDisplayedImage.src = imgSources[index];
+  const oldSelectedThumbnail = document.querySelector(
+    ".modal-selected-garely-img"
+  );
+  oldSelectedThumbnail.classList.remove("modal-selected-garely-img");
+  element.classList.add("modal-selected-garely-img");
+};
+
+/** hides the modal */
+const showModal = (show) => {
+  if (show) {
+    modal.classList.remove("hide-modal");
+  } else {
+    modal.classList.add("hide-modal");
+  }
+};
+
+/** listener */
+modalGaleryImgs.forEach((img, index) => {
+  img.addEventListener("click", () => displayImg(index, img));
+});
+galeryImgs.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    showModal(true);
+    displayImg(index, modalGaleryImgs[index]);
+  });
+});
+closeModalBtn.addEventListener("click", () => showModal(false));

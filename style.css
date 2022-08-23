@@ -375,6 +375,9 @@ modal
     filter: invert(66%) sepia(71%) saturate(3841%) hue-rotate(347deg)
       brightness(100%) contrast(101%);
   }
+  .hide-modal {
+    display: none;
+  }
 }
 /* 
 
