@@ -16,6 +16,7 @@ const toggleSideMenuBtns = [...document.querySelectorAll(".toggle-sidebar")];
 toggleSideMenuBtns.forEach((b) =>
   b.addEventListener("click", () => {
     sidebar.classList.toggle("show-sidebar");
+    showCart(false);
   })
 );
 
@@ -57,10 +58,12 @@ const editProductAmount = (increase) => {
 
   amount = amount < 0 ? 0 : amount;
   productAmountText.textContent = amount;
+  showCart(false);
 };
 
 /** add products to cart */
 const addToCart = () => {
+  showCart(false);
   let amount = parseInt(cartProductAmount.textContent);
   let newAmount = parseInt(productAmountText.textContent);
   if (newAmount > 0) showCartContent(true);
@@ -73,12 +76,33 @@ const addToCart = () => {
   productAmountText.textContent = 0;
   cartBtnAmount.textContent = amount;
   cartBtnAmount.classList.remove("hide-cart-btn-amount");
+  localStorage.setItem("amount", amount);
+};
+
+/** init cart from local storage */
+const initCart = () => {
+  // cart amount and prices
+  const amount = parseInt(localStorage.getItem("amount"));
+  if (!amount) {
+    amount = 0;
+    localStorage.setItem("amount", amount);
+  }
+  if (amount < 1) cartBtnAmount.classList.add("hide-cart-btn-amount");
+  else {
+    cartBtnAmount.classList.remove("hide-cart-btn-amount");
+    showCartContent(true);
+  }
+  let totalPrice = 125 * amount;
+  cartProductAmount.textContent = amount;
+  cartTotalPrice.textContent = `$${totalPrice}`;
+  cartBtnAmount.textContent = amount;
 };
 
 /** shows the cart */
 const showCart = (show) => {
   cartElement.classList.toggle("show-cart");
   if (show == false) cartElement.classList.remove("show-cart");
+  else if (show == true) cartElement.classList.add("show-cart");
 
   const screenWidth =
     window.innerWidth /
@@ -113,10 +137,11 @@ const showCartContent = (show) => {
     cartBtnAmount.textContent = 0;
     cartBtnAmount.classList.add("hide-cart-btn-amount");
     showCart(false);
+    localStorage.setItem("amount", 0);
   }
 };
 
-// show cart
+// show/hide cart
 cartBtn.addEventListener("click", () => showCart());
 
 // delete cart content
@@ -127,6 +152,7 @@ deleteBtn.addEventListener("click", () => {
 // increase/decrease product amount
 minusBtn.addEventListener("click", () => editProductAmount(false));
 plusBtn.addEventListener("click", () => editProductAmount(true));
+document.addEventListener("DOMContentLoaded", initCart);
 
 // add to cart
 addToCartBtn.addEventListener("click", addToCart);
@@ -162,6 +188,7 @@ const slide = (forward) => {
   galery.forEach((img) => {
     img.style.transform = `translateX(${translateAmount}%)`;
   });
+  showCart(false);
 };
 
 prevBtn.addEventListener("click", () => slide(false));
@@ -255,6 +282,7 @@ const showModal = (show) => {
   } else {
     modal.classList.add("hide-modal");
   }
+  showCart(false);
 };
 
 /** slides modal image left or right */
@@ -270,6 +298,7 @@ const slideModalImg = (right) => {
       currentDisplayIndex < 0 ? imgSources.length - 1 : currentDisplayIndex;
     displayImg(currentDisplayIndex, modalGaleryImgs[currentDisplayIndex]);
   }
+  showCart(false);
 };
 
 /** listener */
