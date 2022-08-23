@@ -107,8 +107,14 @@ button:active::after {
   .nav-center {
     width: 80%;
     border-bottom: 0.1rem solid var(--Grayish-blue);
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
     padding-bottom: 2rem;
+    margin-top: 1.5rem;
+  }
+  .nav-center > div {
+    display: flex;
+    align-items: center;
+    gap: 2.600000000000001rem;
   }
   .nav-links {
     display: flex;
@@ -124,7 +130,7 @@ button:active::after {
   .nav-links a::after {
     content: "";
     position: absolute;
-    top: 3.2rem;
+    bottom: -2.68rem;
     border-bottom: 3px solid var(--Orange);
     left: 50%;
     right: 50%;
@@ -140,6 +146,9 @@ button:active::after {
   }
   .toggle-sidebar {
     display: none;
+  }
+  .avatar-pic {
+    width: 2.5rem;
   }
 }
 /* 
@@ -159,8 +168,8 @@ main {
 @media (min-width: 62.5em) {
   main {
     flex-direction: row;
-    max-width: min(80%, 63rem);
-    gap: 4rem;
+    max-width: min(90%, 67rem);
+    gap: 2rem;
   }
 }
 /* 
@@ -231,11 +240,11 @@ image section
   }
   .displayed-image {
     display: block;
-    width: min(100%, 21rem);
+    width: min(100%, 26.7rem);
     border-radius: 0.7em;
   }
   .galery {
-    width: min(100%, 21rem);
+    width: min(100%, 26.4rem);
     padding-top: 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -313,6 +322,7 @@ modal
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
   .modal-displayed-image {
     display: block;
@@ -359,7 +369,32 @@ modal
     border-radius: 0.5rem;
   }
   .modal-slide-buttons {
-    display: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+  }
+  .modal-slide-buttons button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--White);
+    display: grid;
+    place-items: center;
+  }
+  .modal-slide-buttons button img {
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  #modal-next-btn {
+    transform: translateX(50%);
+  }
+  #modal-prev-btn {
+    transform: translateX(-50%);
   }
   /* close button */
   .button-container {
@@ -408,6 +443,21 @@ h1 {
   color: var(--light-black);
   margin-bottom: 1.5rem;
 }
+@media (min-width: 62.5em) {
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  h1 {
+    font-size: 2.5rem;
+
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-size: 0.8rem;
+  }
+}
 /* 
 
 
@@ -445,6 +495,21 @@ price
   font-weight: 700;
   font-size: 1.2rem;
   text-decoration: line-through;
+}
+@media (min-width: 62.5em) {
+  .price-discount-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .old-price {
+    font-size: 0.9rem;
+  }
+  .current-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 0;
+  }
 }
 /* 
 
@@ -499,11 +564,41 @@ add to cart button
   gap: 1rem;
   color: var(--White);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   box-shadow: 0em 1em 0.8em var(--Pale-orange);
 }
 .add-to-cart-btn img {
   filter: brightness(300%);
+}
+@media (min-width: 62.5em) {
+  .add-cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .add-to-cart-btn {
+    width: 60%;
+    flex-basis: 2fr;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    height: 85%;
+  }
+  .add-to-cart-btn img {
+    width: 1rem;
+  }
+  .quantity {
+    width: 40%;
+    flex-basis: 1fr;
+    margin-bottom: 0;
+  }
+  #minus-btn {
+    padding-right: 10%;
+  }
+  #plus-btn {
+    padding-left: 10%;
+  }
 }
 /* 
 ============================
@@ -599,7 +694,7 @@ add to cart button
 .cart-content-holder {
   width: 100%;
 }
-/* card info */
+/* cart info */
 .cart-content {
   width: 100%;
   display: flex;
@@ -667,9 +762,4 @@ add to cart button
 .show-cart-empty-text {
   z-index: 1;
   opacity: 1;
-}
-@media (min-width: 62.5em) {
-  .add-cart-container {
-    display: flex;
-  }
 }

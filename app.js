@@ -233,6 +233,9 @@ const imgSources = [
   "./images/image-product-3.jpg",
   "./images/image-product-4.jpg",
 ];
+const modalNextBtn = document.getElementById("modal-next-btn");
+const modalPrevBtn = document.getElementById("modal-prev-btn");
+let currentDisplayIndex = 0;
 
 /** display the clicked thumbnail image */
 const displayImg = (index, element) => {
@@ -242,6 +245,7 @@ const displayImg = (index, element) => {
   );
   oldSelectedThumbnail.classList.remove("modal-selected-garely-img");
   element.classList.add("modal-selected-garely-img");
+  currentDisplayIndex = index;
 };
 
 /** hides the modal */
@@ -250,6 +254,21 @@ const showModal = (show) => {
     modal.classList.remove("hide-modal");
   } else {
     modal.classList.add("hide-modal");
+  }
+};
+
+/** slides modal image left or right */
+const slideModalImg = (right) => {
+  if (right) {
+    currentDisplayIndex++;
+    currentDisplayIndex =
+      currentDisplayIndex >= imgSources.length ? 0 : currentDisplayIndex;
+    displayImg(currentDisplayIndex, modalGaleryImgs[currentDisplayIndex]);
+  } else {
+    currentDisplayIndex--;
+    currentDisplayIndex =
+      currentDisplayIndex < 0 ? imgSources.length - 1 : currentDisplayIndex;
+    displayImg(currentDisplayIndex, modalGaleryImgs[currentDisplayIndex]);
   }
 };
 
@@ -264,3 +283,5 @@ galeryImgs.forEach((img, index) => {
   });
 });
 closeModalBtn.addEventListener("click", () => showModal(false));
+modalNextBtn.addEventListener("click", () => slideModalImg(true));
+modalPrevBtn.addEventListener("click", () => slideModalImg(false));
